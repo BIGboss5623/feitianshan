@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://feitianshan.zgland.com/sitemap.xml
