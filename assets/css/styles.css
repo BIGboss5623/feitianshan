@@ -78,8 +78,8 @@ img { max-width: 100%; display: block; }
     padding: 140px 5% 90px;
     display: flex;
     align-items: center;
-    background: linear-gradient(120deg, rgba(36, 59, 43, 0.88), rgba(36, 59, 43, 0.72)),
-                url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=80') center/cover;
+    background: linear-gradient(120deg, rgba(25, 45, 32, 0.82), rgba(25, 45, 32, 0.52)),
+                url('../images/landscape.jpg') center/cover;
     color: white;
 }
 .hero-content {
@@ -203,6 +203,13 @@ img { max-width: 100%; display: block; }
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
 }
+.about-photo {
+    width: 100%;
+    max-height: 460px;
+    margin-top: 1.25rem;
+    border-radius: 16px;
+    object-fit: cover;
+}
 .info-panel {
     padding: 1.4rem;
     display: grid;
@@ -237,6 +244,43 @@ img { max-width: 100%; display: block; }
     color: var(--primary);
     margin-bottom: 0.6rem;
 }
+.gallery-section { padding-top: 3rem; }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+.gallery-grid figure {
+    position: relative;
+    min-height: 260px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    background: var(--primary-dark);
+    box-shadow: var(--shadow);
+}
+.gallery-grid .gallery-wide { grid-column: span 2; }
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.gallery-grid figure:hover img { transform: scale(1.035); }
+.gallery-grid figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 2.4rem 1rem 0.8rem;
+    color: white;
+    font-weight: 600;
+    background: linear-gradient(transparent, rgba(0,0,0,0.72));
+}
+.contact-actions { display: grid; gap: 0.75rem; text-align: center; }
+.ctrip-link { color: var(--primary); font-weight: 700; }
+.contact-note { color: var(--muted); font-size: 0.92rem; }
 .contact-section {
     padding: 1.6rem;
 }
@@ -280,6 +324,7 @@ img { max-width: 100%; display: block; }
     .about-layout {
         grid-template-columns: 1fr 1fr;
     }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 720px) {
@@ -298,6 +343,8 @@ img { max-width: 100%; display: block; }
     .about-layout {
         grid-template-columns: 1fr;
     }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-grid .gallery-wide { grid-column: auto; }
     .contact-layout {
         flex-direction: column;
         align-items: flex-start;
