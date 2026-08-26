@@ -1,3 +1,4 @@
+addEventListener('DOMContentLoaded',()=>document.body.classList.add('ready'));
 const header=document.querySelector('[data-header]'),menu=document.querySelector('[data-menu]'),nav=document.querySelector('#main-nav');
 const setHeader=()=>header?.classList.toggle('is-fixed',scrollY>70);addEventListener('scroll',setHeader,{passive:true});setHeader();
 menu?.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open)});nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('is-open');menu?.setAttribute('aria-expanded','false')}));
